@@ -1,0 +1,6 @@
+# Config file for /etc/init.d/gogs
+
+#runas=gogs
+#pidfile=/var/run/gogs.pid
+#work_dir=/var/lib/gogs
+#custom_dir=/var/lib/gogs/custom
