@@ -1,8 +1,7 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="4"
+EAPI="7"
 
 DESCRIPTION="Core sounds for asterisk"
 HOMEPAGE="http://www.asterisk.org/"
