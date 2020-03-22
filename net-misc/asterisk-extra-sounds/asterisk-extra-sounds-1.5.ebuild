@@ -1,8 +1,7 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="2"
+EAPI="7"
 
 DESCRIPTION="Extra sounds for asterisk"
 HOMEPAGE="http://www.asterisk.org/"
@@ -33,16 +32,16 @@ src_unpack() {
 	for ar in ${A}; do
 		l="${ar#${PN}-}"
 		l=${l%%-*}
-                c="${ar#${PN}-${l}-}"
+		c="${ar#${PN}-${l}-}"
 		c=${c%%-*}
 		echo ">>> Unpacking $ar to ${WORKDIR}/${l}"
 		[ -d "${WORKDIR}/${l}" ] || mkdir "${WORKDIR}/${l}" || die "Error creating unpack directory"
 		tar xf "${DISTDIR}/${ar}" -C "${WORKDIR}/${l}" || die "Error unpacking ${ar}"
-                s="${WORKDIR}/${l}/astcc-followed-by-the-pound-key.${c}"
-                d="${WORKDIR}/${l}/astcc-followed-by-the-pound-key-extra.${c}"
-                if [[ -f "${s}" ]] ; then
-                        mv "${s}" "${d}"  || die "Error renaming ${s} to ${d}"
-                fi
+		s="${WORKDIR}/${l}/astcc-followed-by-the-pound-key.${c}"
+		d="${WORKDIR}/${l}/astcc-followed-by-the-pound-key-extra.${c}"
+		if [[ -f "${s}" ]] ; then
+			mv "${s}" "${d}"  || die "Error renaming ${s} to ${d}"
+		fi
 	done
 }
 
@@ -67,8 +66,8 @@ pkg_preinst() {
 	local c
 
 	for c in ${CODECS}; do
-                        use ${c#+} && has_one_codec=1
-        done
+		use ${c#+} && has_one_codec=1
+	done
 }
 
 pkg_postinst() {
