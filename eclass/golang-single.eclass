@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 # @ECLASS: golang-single.eclass
 # @MAINTAINER:
@@ -19,7 +18,7 @@
 # Typical ebuild using golang-single.eclass:
 #
 # @CODE
-# EAPI=5
+# EAPI=7
 #
 # GOLANG_PKG_IMPORTPATH="github.com/captObvious"
 # GOLANG_PKG_ARCHIVESUFFIX=".zip"
@@ -32,7 +31,7 @@
 # LICENSE="MIT"
 # KEYWORDS="~amd64 ~x86"
 # SLOT="0"
-# IUSE="debug doc qt4"
+# IUSE="doc qt4"
 #
 # CDEPEND="
 #   qt4? (
@@ -63,7 +62,7 @@
 # @CODE
 
 
-inherit golang-base
+inherit golang-common
 
 EXPORT_FUNCTIONS src_prepare src_unpack src_configure src_compile src_install src_test
 
@@ -143,7 +142,7 @@ golang-single_src_prepare() {
 	# Sets up GoLang build environment.
 	golang_setup
 
-	golang-base_src_prepare
+	golang-common_src_prepare
 }
 
 # @FUNCTION: golang-single_src_configure
@@ -152,7 +151,7 @@ golang-single_src_prepare() {
 golang-single_src_configure() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	golang-base_src_configure
+	golang-common_src_configure
 }
 
 # @FUNCTION: golang-single_src_compile
@@ -161,7 +160,7 @@ golang-single_src_configure() {
 golang-single_src_compile() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	golang-base_src_compile
+	golang-common_src_compile
 }
 
 # @FUNCTION: golang-single_src_install
@@ -170,7 +169,7 @@ golang-single_src_compile() {
 golang-single_src_install() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	golang-base_src_install
+	golang-common_src_install
 }
 
 # @FUNCTION: golang-single_src_test
@@ -179,7 +178,7 @@ golang-single_src_install() {
 golang-single_src_test() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	golang-base_src_test
+	golang-common_src_test
 }
 
 fi
