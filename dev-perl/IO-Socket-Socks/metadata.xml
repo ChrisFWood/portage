@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>chris.f.wood@gmail.com</email>
+    <name>Chris Wood</name>
+  </maintainer>
+  <upstream>
+    <remote-id type="cpan">IO::Socket::Socks</remote-id>
+    <remote-id type="cpan-module">IO::Socket::Socks</remote-id>
+    <remote-id type="cpan-module">IO::Socket::Socks::Debug</remote-id>
+    <remote-id type="cpan-module">IO::Socket::Socks::Error</remote-id>
+    <remote-id type="cpan-module">IO::Socket::Socks::ReadOnlyVar</remote-id>
+    <remote-id type="cpan-module">IO::Socket::Socks::SocketClassVar</remote-id>
+  </upstream>
+</pkgmetadata>
