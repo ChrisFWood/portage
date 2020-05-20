@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+depend() {
+	use net
+}
+
+start_pre() {
+    checkpath --directory --owner minecraft:minecraft --mode 0775 /var/lib/pocketmine-mp
+}
+
+start() {
+	ebegin "Starting PocketMine-MP"
+	start-stop-daemon --start --user minecraft --group minecraft \
+	--make-pidfile --pidfile /var/run/pocketmine-mp.pid \
+	--chdir /var/lib/pocketmine-mp --background \
+	--exec /usr/bin/php7.2 -- /var/lib/pocketmine-mp/PocketMine-MP.phar --no-wizard --disable-readline
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping PocketMine-MP"
+	start-stop-daemon --stop --quiet --pidfile /var/run/pocketmine-mp.pid
+	eend $?
+}
