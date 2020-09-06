@@ -15,9 +15,9 @@ IUSE=""
 
 RDEPEND="
 		${DEPEND}
-		dev-php/pthreads
+		>dev-php/pthreads-3.2.0
 		dev-php/pecl-yaml
-		dev-lang/php:7.2[cli,nls,ctype,threads,zip,phar,readline,zlib,curl,json,bcmath,ssl,sockets,unicode]
+		dev-lang/php:7.3[cli,nls,ctype,threads,zip,phar,readline,zlib,curl,json,bcmath,ssl,sockets,unicode]
 "
 DEPEND="
 		acct-group/minecraft
