@@ -13,7 +13,7 @@ start() {
 	start-stop-daemon --start --user minecraft --group minecraft \
 	--make-pidfile --pidfile /var/run/pocketmine-mp.pid \
 	--chdir /var/lib/pocketmine-mp --background \
-	--exec /usr/bin/php7.3 -- /var/lib/pocketmine-mp/PocketMine-MP.phar --no-wizard --disable-readline
+	--exec /usr/bin/php8.0 -- /var/lib/pocketmine-mp/PocketMine-MP.phar --no-wizard --disable-readline
 	eend $?
 }
 

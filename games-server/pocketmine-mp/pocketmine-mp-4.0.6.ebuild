@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -10,14 +10,19 @@ SRC_URI="https://github.com/pmmp/PocketMine-MP/releases/download/${PV}/PocketMin
 https://github.com/pmmp/PocketMine-MP/releases/download/${PV}/start.sh -> ${P}.start.sh"
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
 		${DEPEND}
-		>dev-php/pthreads-3.2.0
+		dev-php/pthreads
+		dev-php/pecl-crypto
+		dev-php/igbinary
+		dev-php/php-leveldb
 		dev-php/pecl-yaml
-		dev-lang/php:7.3[cli,nls,ctype,threads,zip,phar,readline,zlib,curl,json,bcmath,ssl,sockets,unicode]
+		dev-php/ext-chunkutils2
+		dev-php/ext-morton
+		dev-lang/php:8.0[cli,nls,ctype,threads,zip,phar,gmp,readline,zlib,curl,bcmath,ssl,sockets,unicode,ipv6]
 "
 DEPEND="
 		acct-group/minecraft

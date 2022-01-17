@@ -4,22 +4,19 @@
 EAPI=7
 
 USE_PHP="php8-0"
-PHP_EXT_NAME="${PN}"
+PHP_EXT_NAME="${PN/ext-/}"
 
 inherit php-ext-source-r3 git-r3
 
-DESCRIPTION="Threading for PHP - Share Nothing, Do Everything :)"
-HOMEPAGE="https://github.com/pmmp/pthreads"
-EGIT_REPO_URI="https://github.com/pmmp/pthreads.git"
-EGIT_BRANCH="fork"
+DESCRIPTION="Bedrock subchunk format for PocketMine-MP 4.0"
+HOMEPAGE="https://github.com/pmmp/ext-chunkutils2"
+EGIT_REPO_URI="https://github.com/pmmp/ext-chunkutils2.git"
 
 LICENSE="PHP-3.01"
 SLOT="8"
 KEYWORDS="~amd64"
 RESTRICT="mirror"
-DEPEND="
-	dev-lang/php:8.0[threads]
-"
+DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_unpack() {
@@ -27,5 +24,5 @@ src_unpack() {
 
 	# create the default modules directory to be able
 	# to use the php-ext-source-r3 eclass to configure/build
-	ln -s src "${S}/modules"
+	ln -s ../php8.0 "${S}/modules"
 }

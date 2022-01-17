@@ -6,9 +6,9 @@
 		<name>Chris Wood</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">pmmp/pthreads</remote-id>
+		<remote-id type="github">bukka/php-crypto</remote-id>
 	</upstream>
 	<longdescription>
-		Fork of https://github.com/krakjoe/pthreads with various improvements, including PHP 7.4+ support
+		The php-crypto is an objective wrapper for OpenSSL Crypto library.
 	</longdescription>
 </pkgmetadata>

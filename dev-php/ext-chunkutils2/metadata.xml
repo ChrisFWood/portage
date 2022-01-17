@@ -6,9 +6,9 @@
 		<name>Chris Wood</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">pmmp/pthreads</remote-id>
+		<remote-id type="github">pmmp/ext-chunkutils2</remote-id>
 	</upstream>
 	<longdescription>
-		Fork of https://github.com/krakjoe/pthreads with various improvements, including PHP 7.4+ support
+		PHP extension in C++ implementing the modern Minecraft: Bedrock subchunk format for PocketMine-MP 4.0
 	</longdescription>
 </pkgmetadata>
