@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,8 +16,7 @@ if [[ ${PV} = 9999* ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/isc-projects/kea.git"
 else
-	SRC_URI="ftp://ftp.isc.org/isc/kea/${MY_P}.tar.gz
-		ftp://ftp.isc.org/isc/kea/${MY_PV}/${MY_P}.tar.gz"
+	SRC_URI="ftp://ftp.isc.org/isc/kea/${MY_PV}/${MY_P}.tar.gz"
 	[[ "${PV}" == *_beta* ]] || [[ "${PV}" == *_rc* ]] || \
 	KEYWORDS="~amd64 ~arm64 ~x86"
 fi

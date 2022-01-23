@@ -55,17 +55,17 @@ start_pre() {
 			return 1
 		fi
 	fi
-        if ${CTRL:-false} ; then
-                if [ ! -f "${ctrl_config}" ] ; then
-                        eerror "Please create a ${ctrl_config} config file."
-                        return 1
-                fi
+	if ${CTRL:-false} ; then
+		if [ ! -f "${ctrl_config}" ] ; then
+			eerror "Please create a ${ctrl_config} config file."
+			return 1
+		fi
 
-                if ! ${ctrl_command} -t ${ctrl_config} 1>/dev/null 2>/dev/null ; then
-                        eerror "Error in config file ${ctrl_config}"
-                        return 1
-                fi
-        fi
+		if ! ${ctrl_command} -t ${ctrl_config} 1>/dev/null 2>/dev/null ; then
+			eerror "Error in config file ${ctrl_config}"
+			return 1
+		fi
+	fi
 }
 
 start() {
@@ -85,11 +85,11 @@ start() {
 			-x ${ddns_command} -- -c ${ddns_config} \
 			|| return 1
 	fi
-        if ${CTRL:-false} ; then
-                start-stop-daemon -m -b -p ${ctrl_pidfile} \
-                        -x ${ctrl_command} -- -c ${ctrl_config} \
-                        || return 1
-        fi
+	if ${CTRL:-false} ; then
+		start-stop-daemon -m -b -p ${ctrl_pidfile} \
+			-x ${ctrl_command} -- -c ${ctrl_config} \
+		|| return 1
+	fi
 }
 
 stop() {
@@ -106,8 +106,8 @@ stop() {
 		start-stop-daemon --stop -p ${ddns_pidfile} \
 			|| return 1
 	fi
-        if ${CTRL:-false} ; then
-                start-stop-daemon --stop -p ${ctrl_pidfile} \
-                        || return 1
-        fi
+	if ${CTRL:-false} ; then
+		start-stop-daemon --stop -p ${ctrl_pidfile} \
+			|| return 1
+	fi
 }
