@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -19,7 +19,7 @@ RDEPEND="
 		dev-perl/XML-LibXML
 		dev-perl/CGI
 		media-video/rtmpdump
-		media-video/atomicparsley-wez
+		media-video/atomicparsley
 	"
 DEPEND=""
 RESTRICT="mirror"
