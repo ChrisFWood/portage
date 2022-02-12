@@ -1,9 +1,9 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{5,6,7,8} )
+PYTHON_COMPAT=( python3_{6,7,8,9} )
 PYTHON_REQ_USE="sqlite"
 
 inherit git-r3 python-single-r1
@@ -22,15 +22,15 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEP}
 	$(python_gen_cond_dep '
-	dev-python/PyQt5[${PYTHON_MULTI_USEDEP},gui,widgets]
+	dev-python/PyQt5[${PYTHON_USEDEP},gui,widgets]
 	>=dev-qt/qtgui-5.5[jpeg,png,gif]
-	>=dev-python/send2trash-1.3.0[${PYTHON_MULTI_USEDEP}]
-	>=dev-python/hsaudiotag3k-1.1.3[${PYTHON_MULTI_USEDEP}]
+	>=dev-python/send2trash-1.3.0[${PYTHON_USEDEP}]
+	>=dev-python/hsaudiotag3k-1.1.3[${PYTHON_USEDEP}]
 	')"
 DEPEND="${RDEPEND}
 	$(python_gen_cond_dep '
-	>=dev-python/polib-1.0.4[${PYTHON_MULTI_USEDEP}]
-	>=dev-python/sphinx-1.2.2[${PYTHON_MULTI_USEDEP}]
+	>=dev-python/polib-1.0.4[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-1.2.2[${PYTHON_USEDEP}]
 	')"
 
 src_compile() {
