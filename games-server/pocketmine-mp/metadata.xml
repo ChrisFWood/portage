@@ -5,10 +5,15 @@
     <email>chris.f.wood@gmail.com</email>
     <name>Chris Wood</name>
   </maintainer>
-<upstream>
+  <upstream>
     <remote-id type="github">pmmp/PocketMine-MP</remote-id>
   </upstream>
   <longdescription>
-    A server software for Minecraft: Bedrock Edition in PHP
+    A highly customisable, open source server software for Minecraft: Bedrock Edition written in PHP
+    A powerful plugin API, which allows you to extend and customize your server far more easily and 
+    extensively than any competing server implementations, including the official vanilla server.
+    Multi-world support, allowing you to offer a more varied game experience to players without transferring them to other server nodes.
+    Performance fit to hold 100+ players.
+    PocketMine-MP has the longest and best track record of any custom server for compatibility with new Minecraft versions.
   </longdescription>
 </pkgmetadata>

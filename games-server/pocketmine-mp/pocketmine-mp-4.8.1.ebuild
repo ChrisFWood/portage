@@ -34,7 +34,6 @@ S="${WORKDIR}"
 
 src_install() {
 	doinitd "${FILESDIR}/init.d/pocketmine-mp"
-	dodir "/var/lib/${PN}"
 	exeinto "/var/lib/${PN}"
 	newexe "${DISTDIR}/${P}.start.sh" start.sh
 	insinto "/var/lib/${PN}"
